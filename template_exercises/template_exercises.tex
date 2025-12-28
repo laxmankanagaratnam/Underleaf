@@ -1,0 +1,88 @@
+\documentclass[12pt,a4paper]{article}
+
+% Formatting and layout packages
+\usepackage{a4wide}
+\usepackage{fancyhdr} % For headers and footers
+\usepackage{graphicx} % For including logos and images
+\usepackage{parskip} % For better paragraph spacing
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath} % Advanced math features
+\usepackage{amssymb} % Math symbols
+\usepackage{bm} % Bold math symbols
+\usepackage{siunitx} % SI units
+\usepackage{booktabs} % Better table formatting
+\usepackage{subcaption} % Subfigure captions
+\usepackage[version=4]{mhchem} % For chemical formulae
+\usepackage{float} % For float positioning (required for [H])
+\usepackage{hyperref} % For clickable links
+\usepackage{caption} % For custom caption formatting
+\usepackage{geometry} % Better control over margins
+\usepackage{listings}
+\usepackage{ulem}
+\newcommand{\doubleunderline}[1]{\underline{\underline{#1}}}
+\usepackage{enumitem}
+
+
+
+\lstset{
+  basicstyle=\ttfamily,
+  columns=fullflexible,
+  frame=single,
+  breaklines=true,
+  postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+}
+
+% Adjust top margin just for the title page
+\newgeometry{top=15mm, left=25mm, right=25mm, bottom=30mm}
+
+% SI unit settings
+\sisetup{uncertainty-mode=separate}
+\sisetup{exponent-product=\cdot}
+
+% Define header and footer
+\pagestyle{fancy}
+\fancyhf{} % Clear default header and footer
+\fancyhead[L]{\vspace{-0.13cm}\includegraphics[width=2.5cm]{univie.png}} % Left logo
+\fancyhead[R]{\vspace{-0.33cm}\includegraphics[width=2.2cm]{astro.png}} % Right logo
+
+% No paragraph indentation
+\setlength{\parindent}{0pt} 
+
+% Title page with logos
+\title{
+\vspace{-1cm} % Adjust top spacing here
+\begin{minipage}{0.4\textwidth}
+    \includegraphics[width=4cm]{univie.png} % Left title logo
+\end{minipage}
+\hfill
+\begin{minipage}{0.4\textwidth}
+    \raggedleft
+    \includegraphics[width=4cm]{astro.png} % Right title logo
+\end{minipage}
+\vspace{0.5cm} % Space between logos and title
+\\
+\textbf{Subject} \\[1ex]
+\textbf{Exercise Sheet No}\\
+\large{Author} \\
+\large{Student Number} \\[2ex]
+\large University of Somewhere \\ 
+\large Department of Something
+\vspace{-1.5cm}
+\date{\today}
+}
+
+\begin{document}
+
+\maketitle
+
+% Table of contents
+\tableofcontents
+%\newpage
+
+% Restore normal page geometry after title page
+\restoregeometry
+
+\section{Exercise 1}
+
+
+\end{document}

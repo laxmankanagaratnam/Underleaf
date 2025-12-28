@@ -1,0 +1,86 @@
+# LaTeX Packages and Requirements
+
+# Install all packages or selectively:
+
+## Option 1: Install all packages (Recommended)
+# Installs the complete TeX Live scheme with all packages
+# Installation time: ~30 minutes
+# Disk space required: ~8 GB
+#
+# sudo tlmgr install scheme-full
+
+## Option 2: Install essential packages only
+# Smaller footprint, covers most common use cases
+# 
+# sudo tlmgr update --self
+# sudo tlmgr install amsmath amssymb graphicx geometry fancyhdr hyperref
+# sudo tlmgr install babel inputenc parskip
+# sudo tlmgr install booktabs tikz pgfplots subcaption float array multirow longtable wrapfig rotating
+# sudo tlmgr install enumitem tcolorbox fancybox caption
+# sudo tlmgr install ulem soul mathtools anyfontsize dsfont
+# sudo tlmgr install siunitx mhchem physics listings
+# sudo tlmgr install cleveref natbib setspace xcolor tikz-cd pdfpages epstopdf adjustbox xifthen
+
+## Option 3: Install packages as needed
+# Install specific packages when you encounter missing package errors:
+# sudo tlmgr install <package-name>
+
+# Below is a comprehensive list of commonly used LaTeX packages:
+# Essential LaTeX packages
+# Install with: sudo tlmgr install <package-name>
+
+## Basics (usually pre-installed)
+amsmath          # Advanced math functions
+amssymb          # Math symbols
+graphicx         # Insert images
+geometry         # Page layout
+fancyhdr         # Headers and footers
+hyperref         # Interactive links
+
+## Text & Formatting
+babel            # Multi-language support
+inputenc         # UTF-8 support
+parskip          # Better paragraph spacing
+
+## Tables & Graphics
+booktabs         # Professional tables
+tikz             # Vector graphics
+pgfplots         # Function plotting
+subcaption       # Subfigure captions
+float            # Float environments
+array            # Extended table formatting
+multirow         # Cells spanning multiple rows
+longtable        # Tables spanning multiple pages
+wrapfig          # Wrap text around figures
+rotating         # Rotate content (figures, tables)
+
+## Lists & Structure
+enumitem         # Enhanced list environments
+tcolorbox        # Colored and framed boxes
+fancybox         # Fancy box environments
+caption          # Custom caption formatting
+
+## Typography & Formatting
+ulem             # Underlining, striking through
+soul             # Text highlighting
+mathtools        # Extended math features
+anyfontsize      # Use any font size
+dsfont           # Double-struck font for sets
+
+## Scientific
+siunitx          # SI units
+mhchem           # Chemical formulas
+physics          # Physics macros
+listings         # Code listings
+
+## Advanced Features
+cleveref         # Intelligent references
+natbib           # Bibliography management
+setspace         # Line spacing
+xcolor           # Colors
+tikz-cd          # Commutative diagrams
+pdfpages         # Include PDF files
+epstopdf         # Convert EPS to PDF
+adjustbox        # Adjust box sizes
+xifthen          # Conditional commands
+

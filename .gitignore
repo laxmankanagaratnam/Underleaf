@@ -1,0 +1,61 @@
+# Ignore compiled and generated LaTeX files
+
+## Main output files
+*.pdf
+*.dvi
+*.ps
+
+## Intermediate compilation files
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.synctex
+*.synctex.gz
+*.dpth
+*.md5
+*.auxlock
+
+## Bibtex files
+*.bib.bak
+
+## Editor/IDE files
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+.vscode-server/
+
+## OS files
+.DS_Store
+Thumbs.db
+*.tmp
+
+## Miktex/TeX Live cache
+**/.cache
+**/miktexmf.ini
+
+## Latexmk
+*.latexmain
+
+## Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+## Overleaf
+.overleaf/
+
+## Python (if used)
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+venv/
+env/

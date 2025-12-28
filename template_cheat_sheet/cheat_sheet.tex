@@ -1,0 +1,194 @@
+\RequirePackage{fix-cm}
+\documentclass{scrartcl}
+\KOMAoptions{fontsize=4.5pt}
+\usepackage[a4paper, bottom=0.1cm, left=0.1cm, right=0.1cm, top=0.025cm, landscape]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{eufrak}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{bbm}
+\usepackage{bm}
+\usepackage{ragged2e}
+\usepackage{enumitem}
+\usepackage{comment}
+\usepackage{multicol}
+\usepackage{tabularx}
+\usepackage[customcolors]{hf-tikz}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{subfig}
+\usepackage[light,condensed,math]{kurier}
+\usepackage{pst-node}
+\usepackage{tikz-cd} 
+\usepackage[skip=1ex]{caption}
+\usepackage{array, booktabs, makecell, multirow}
+\usepackage{lipsum}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}
+
+\setlength{\parindent}{0pt}
+
+\setcellgapes{5pt}
+\setlength\belowrulesep{0pt}
+\setlength\aboverulesep{0pt}
+
+\usepackage{scalerel,stackengine,amsmath}
+\newcommand\equalhat{\mathrel{\stackon[1.5pt]{=}{\stretchto{%
+    \scalerel*[\widthof{=}]{\wedge}{\rule{1ex}{3ex}}}{0.5ex}}}}
+
+\setitemize{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
+
+\NewEnviron{resizealign}{\sbox0{\let\notag=\relax
+    $\begin{matrix}\displaystyle\BODY\end{matrix}$}%
+  \sbox1{$(\theequation)$}%
+  \sbox2{\parbox{\dimexpr \wd0 + 2\wd1}%
+    {\begin{align*}\BODY\end{align*}}}% for testing
+  \noindent\resizebox{0.25\textwidth}{!}{\usebox2}%
+}
+
+\newsavebox{\selvestebox}
+\newenvironment{colbox}[1]
+  {\newcommand\colboxcolor{#1}%
+   \begin{lrbox}{\selvestebox}%
+   \begin{minipage}{\dimexpr\columnwidth-2\fboxsep\relax}}
+  {\end{minipage}\end{lrbox}%
+   \begin{center}
+   \colorbox[HTML]{\colboxcolor}{\usebox{\selvestebox}}
+   \end{center}}
+
+
+\renewcommand{\baselinestretch}{0.0001} 
+
+\begin{document}
+
+\begingroup
+\let\clearpage\relax
+
+\setlength{\columnseprule}{0.3pt}
+\setlength{\columnsep}{3pt} % Adjust the column separation
+
+\flushbottom
+\raggedcolumns
+\begin{multicols*}{8}
+\noindent
+
+\textbf{1-2 Phänomenologische Quantenphysik}\\
+$\bullet$ Spektrale Modendichte: $n(\nu) d\nu = \frac{8 \pi \nu^2}{c^3} d\nu$ 
+$\bullet$ Planck: $E = hf$ mit $h := 6.626 \times 10^{-34}$ Js; $\hbar = \frac{h}{2 \pi} = 1.055 \times 10^{-34}$ Js
+$\bullet$ Besetzungswahrscheinlichkeit: $p(nh\nu) = \frac{\exp(-n \cdot h\nu / k_BT)}{\sum_n=0^{\infty}\exp(-n \cdot h\nu/ k_BT)}$
+$\bullet$ Mittlere Energie pro Mode = mittlere Besetzungswahrscheinlichkeit $\cdot$ Photonenenergie $\Bar{W} = \sum p(nh\nu) \cdot nh\nu = \frac{1}{\exp(h\nu/k_BT)-1} \cdot h\nu$
+$\bullet$ Spektrale Energiedichte (als Fkt der Frequenz): $u(\nu)d\nu = \frac{8 \pi \nu^2}{c^3} \cdot \frac{h\nu}{\exp(h\nu/k_BT)-1} d\nu$
+$\bullet$ Spektrale Energiedichte (als Fkt der Wellenlänge): $u(\lambda)d\lambda = \frac{8\pi hc}{\lambda^5} \cdot \frac{d\lambda}{\exp(hc/\lambda k_B T)-1}$
+$\bullet$ Wien Verschiebungsgesetz: $\lambda_{\max} \cdot T = 2.898$ mmK
+$\bullet$ Stefan-Boltzmann Gesetz: $P_{\text{em}} \varepsilon \cdot \sigma_{\text{SB}} \cdot A \cdot T^4$ mit $\sigma_{\text{SB}} = 5.67 \times 10^{-8}$ W/$m^2K^4$
+$\bullet$ Michaelson-Interferometer: \lipsum[1]
+$\bullet$ Fotoeffekt: 1) Elektronenemission braucht Mindestfrequenz des Lichts. 2) Energie der Elektronen wächst mit Photonenenergie: $E_{\text{kin}} = h\nu - W_A$ mit $W_A$: Austrittsarbeit des Materials. 3) Elektronenstrom sinkt mit steigender Lichtfrequenz bei gleicher Lichtleistung. Höhere Lichtfrequenz: Mehr Energie pro Photon. Weniger Photonen bei fixer Lichtleistung. 4) Wenn Austrittsarbeit überschritten, Elektronenstrom proportional zur Lichtleistung. Höhere Leistung = mehr Photonen $\Rightarrow$ mehr Elektronen. 5) Bsp bei P = 1W, $\lambda = 532nm$ $N = \frac{P}{h\nu} = \frac{P \lambda}{hc} = 2.7 \times 10^{18}$ phot./s
+$\bullet$ Licht überträgt Energie und Impuls wie ein Teilchen. Compton-Effekt: Impulsübertragung eines Röntgenquants an ein quasi-festes Elektron. Licht erscheint bei Streuung an freien Elektronen wie ein massebehaftetes Teilchen, das Impuls auf das Elektron überträgt. \lipsum[2]
+$\bullet$ Impuls $\&$ Energietransfer $\rightarrow$ Rotverschiebung der Wellenlänge des Photons: $\Delta \lambda = \lambda_c \cdot (1-\cos(\varphi)$ mit Compton-Wellenlänge des Elektrons: $\lambda_c = h/m_ec = 2.4$ pm
+$\bullet$ Impulstransfer von Licht: $\Delta p = \hbar k$; Bsp: Laserleistung $P = 10W$ auf $A = 1 \mu m^2$ Lichtdruck: $p = \frac{P}{c A} = 0.033 \text{Pa} = 330 \text{mbar}$
+$\bullet$ Licht hat zwei mögliche Polarisationszustände: zB Horizontal,Vertikal: $|H\rangle \equiv 0$, $|V\rangle \equiv 1$, oder rechts-,linkszirkulär: $|L\rangle \equiv 0$, $|R\rangle \equiv 1$
+$\bullet$ Zirkular polarisierte Photonen haben Eigendrehimpuls (Spin): $\Vec{S} = \pm \hbar \, \Vec{k}/k \rightarrow s = \pm 1 \cdot \hbar$ $\bullet$ Nachweis Beth: Änderung der Helizität eines zirkular polarisierten Lichtstrahls erzeugt ein messbares Drehmoment durch eine $\lambda/2$-Platte. \lipsum[3]
+$\bullet$ Bahndrehimpuls von Licht mit Drehimpuls $l$: \lipsum[4]
+
+$\bullet$ Masse des Photons: Ruhemasse $m_0 = 0$; gravitative Rotverschiebung: $mc^2 = h\nu$ $\bullet$ Wellenvektor: $k = 2\pi/\lambda$ $\bullet$ Polarisation: $\exists$ 2 transversale Polarisationen mit $\Vec{E} \perp \Vec{k}$ für ebene Wellen im Vakuum $\bullet$ Quantenbit: Informationseinheit aus allen Superpositionen von $|0\rangle$ und $|1\rangle$: $|\psi\rangle = \alpha |0\rangle + \beta |1\rangle$ mit $\alpha,\beta \in \mathbb{C}$ $\bullet$ Interpretiere $|0\rangle$ als $|R\rangle$ bzw. $|H\rangle$ und $|1\rangle$ als $|L\rangle$ bzw. $|V\rangle$ $\bullet$ Äquatorialebene: koheränte Überlagerung der Polarisationen: $|+45^{\circ}\rangle = 1/\sqrt{2}(|H\rangle + |V\rangle)$ oder $|-45^{\circ}\rangle = 1/\sqrt{2}(|H\rangle - |V\rangle)$ \lipsum[5]
+
+$\bullet$ Quantenzufall: Elementare Systeme, nur binäre Entscheidungen $\bullet$ Mach-Zehnder-Interferometer: Licht ist auch eine Welle \lipsum[6]
+$\bullet$ Wenn roter und blauer Weg gleich lang und beide Strahlteiler symmetrisch 50:50 sind, landet $100\%$ des Lichts in Detektor $D_1$ und $0\%$ in $D_2$ durch Interferenz. $\bullet$ Weg 2 blockiert mit Teddy: Der Teddy blockiert einen Weg, sodass die Superposition des Photons gestört wird und das veränderte Interferenzmuster seine Anwesenheit verrät (auch wenn nicht jedes Photon direkt mit ihm wechselwirkt).
+$\bullet$ Quantenmechanische Verschränkung: Zustand des Einzelsystems ist bis zur Messung nicht existent. Verschränkung ist im Prinzip distanzunabhängig. $\bullet$ 
+
+\textbf{SS22 Termin 3}\\
+\textbf{1.} Polarisiertes Licht fällt auf einen nichtpolarisierenden 50/50 Strahlteiler. Was ist Wahr?\\
+\textbf{F}: Jedes zweite Photon fliegt gerade aus.\\
+\textbf{W}: Jedes Photon ist in einer Überlagerung aus "gerade aus" und "abgelenkt".\\
+\textbf{F}: Die Photonen sind danach polarisiert.\\
+\textbf{2.} Stefan-Bolzmann-Gesetz: Wieviel mehr Leistung emittiert ein Stern mit einer Oberflächentemperatur von 10'000K gegenüber einem Stern mit 5'000K?\\
+\textbf{W}: 16x mehr ($P = \varepsilon \sigma A T^4$)\\
+\textbf{3.} Wien'sche Verschiebung: $T=640K$. Was ist $\lambda$?\\
+\textbf{W}: 4500 nm ($\lambda = 2898 \mu m / T$)\\
+\textbf{4.} Die de Broglie Wellenlänge eines Moleküls der Masse $6.6 \times 10^{-24}$ kg ist bei $v=100$ m/s:\\
+\textbf{W}: $\lambda_{dB} = 1$ pm ($\lambda_{dB} = h/(mv) = 6.626 \times 10^{-34} / (6.6 \times 10^{-24} \times 100)$)\\
+\textbf{5.} Was besagt Heisenberg's Unschärferelation?\\
+\textbf{W}: Die Standardabweichung der Messwerte zweier nicht-kommutierenden Observablen sind antikorreliert.\\
+\textbf{6.} Was gilt für den Aufsteigeroperator im harmonischen Oszillator?\\
+\textbf{W}: \(a^\dagger\lvert n\rangle=\sqrt{n+1}\,\lvert n+1\rangle\).\\
+\textbf{7.} Welche Werte kann die magnetische Quantenzahl $m_j$ annehmen?\\
+\textbf{W}: Alle Zahlen von -J...J im Abstand von $\Delta m = 1$\\
+\textbf{F}: Alle Zahlen von 0...F-1 im Abstand von $\Delta m= 1$\\
+\textbf{W}: Alle Zahlen von -F...F im Abstand von $\Delta m = 1$, wenn der Kernspin  $I=0$.\\
+\textbf{8.} Welcher Atomübergang definieren die Zeit?\\
+\textbf{W}: Cs am Hyperfeinübergang $F=3 (m_F=0) \rightarrow$ $F=4 (m_F = 0)$\\
+\textbf{9.} Die Feinstruktur der Atome entsteht u.a. durch\\
+\textbf{W}: Die Spin-Bahn Kopplung\\
+\textbf{F}: Relativistischen Massenzuwachs\\
+\textbf{W}: Kernspin\\
+\textbf{10.} Die Hyperfeinstruktur der Atome entsteht durch\\
+\textbf{F}: Quark-Gluon Wechselwirkung.\\
+\textbf{W}: Wechselwirkung Kernspin mit Hüllendrehimpuls.\\
+\textbf{F}: Durch ein äusseres Magnetfeld.\\
+\textbf{11.} Was trifft auf einen Rydbergzustand zu?\\
+\textbf{W}: hohe Quantenzahl\\
+\textbf{F}: hohe Bindungsenergie\\
+\textbf{W}: Wasserstoffähnlicher Zustand\\
+\textbf{12.} Übergangswahrscheinlichkeit im Schwingungsspektrum eines Moleküls Faktor\\
+\textbf{W}: Franck-Condon Faktor\\
+\textbf{13.} Welche Aussagen stimmen?\\
+\textbf{W}: Fopplerkühlung basiert auf gerichteter Absorption und isotroper Emission.\\
+\textbf{F}: In der Dopplerkühlung spielen Rabi-Oszillatoren eine zentrale Rolle.\\
+\textbf{W}: Dopplerkühlung braucht rotverstimmtes Licht.\\
+\textbf{14.} Zu welcher Teilchengruppe gehört das Neutrino im Standardmodell?\\
+\textbf{W}: Leptonen\\
+\textbf{15.} Welche Austauschteilchen bei schwacher Wechselwirkung?\\
+\textbf{W}: W-Bosonen\\
+\textbf{16.} Wie lässt sich die Spaltbarkeit von $^{235}\mathrm{U}$ mit thermischen Neutronen begründen?
+\textbf{F}: $^{235}\mathrm{U}$ ist ein Alphastrahler.\\
+\textbf{W}: Das Neutron ist ein elektrisch neutrales Teilchen.\\
+\textbf{W}: $^{235}\mathrm{U}$ ist ein gu-Kern.\\
+\textbf{17.} Bei welchen radioaktiven Zerfällen ändert sich die Neutronenzahl des Kerns?\\
+\textbf{W}: $\alpha$-Zerfall\\
+\textbf{W}: Elektroneneinfang\\
+\textbf{18.} Bei der Energiegewinnung in der Sonne ist die Reaktion $p+p\rightarrow d + e^+ + \nu_e$ sehr wichtig. Welches Zusammenwirken der fundamentalen Wechselwirkung ist dazu notwendig?\\
+\textbf{W}: Schwache WW, Starke WW, Coulomb-WW, Gravitation\\
+\textbf{19.} Welche Merkmale der Bindung von Nukleonen im Kern werden von der Bethe-Weizsäcker Formel beschrieben?\\
+\textbf{W}: Die Coulomb-Abstossung der Protonen verringert betragsmässig die Bindungsenergie.\\
+\textbf{20.} Welche Aussagen stimmen?\\
+\textbf{W}: Der radioaktive Zerfall führt immer zu Kernen mit kleinerer Masse.\\
+\textbf{F}: Pro Element gibt es höchstens 2 stabile Isotope.\\
+\textbf{W}: $^{16}\mathrm{O}$ zählt zu den Kernen mit magischen Nukleonenzahlen und hat daher eine grosse Bindungsenergie.\\
+\textbf{21.} Planckstrahler, $T=900$K, $f=3\times10^{14}$HZ\\
+\textbf{a)} Photonenenergie in Einheiten von eV: $E = hf = 6.626\times 10^{-34} \times 3\times10^{14}/ 1.602 \times 10^{-19} = 1.24$eV.\\
+\textbf{b)} Spektrale Modendichte: $n(f) = 8\pi f^2/c^3 = 8.4\times 10^5$ Moden/$m^3$Hz\\
+\textbf{c)} Population pro Mode: $\langle n \rangle = 1/(e^{hf/k_BT)}-1) = 1.13\times10^{-7}$\\
+\textbf{22.a)} Skizziere harmonischen Oszillator und seine Wellenfunktion bis $n=3$: \lipsum[7]
+\textbf{22.a)} Wie gross sind die Eigenenergien des H.O. wenn er mit $f=20$kHz oszilliert?\\
+\textbf{A}: $E = \hbar \omega (n + 1/2) = hf (n + 1/2) = 7/2 hf = 4.64 \times 10^{-29}$J.\\
+\textbf{22.b)} Skizziere einen unendlich hohen 1D Kasten und seine Wellenfunktion bei $n=3$: \lipsum[8]
+\textbf{22.b)} Wie skaliert die Eigenenergie mit der Quantenzahl n?\\
+\textbf{A}: $E = (h^2n^2)/(8ma^2)$\\
+\textbf{23.a,b} Wie viele Elektronen haben jeweils maximal Platz in der...\\
+\textbf{A}: K-Schale: 2; L-Schale: 8; M-Schale: 18; N-Schale 32; (allgemein $2n^2$)\\
+\textbf{A}: s-Orbital: 2; p-Orbital: 6; d-Orbital: 10; f-Orbital: 14\\
+\textbf{23.c)} Kalium hat die Ordnungszahl 19. Geben Sie die vollst. Elektronenkonfig. an.\\
+\textbf{A}: 
+
+\begin{comment}
+\vspace{-0.5cm}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.01\columnwidth]{graphics/....}
+\end{figure}
+\end{comment}
+
+\end{multicols*}
+
+\endgroup
+
+\end{document}
